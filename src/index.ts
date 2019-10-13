@@ -5,8 +5,19 @@ class EventHub{
   *   click2: [fn1, fn2, fn3],
   * }
   * */
-  events: {};
-  on(eventName, fn){};
-  emit(eventName, data){};
+  events = {};
+  on(eventName, fn){
+    if(!(this.events[eventName])){
+      this.events[eventName] = [];
+    }
+    this.events[eventName].push(fn);
+  };
+  emit(eventName, data){
+    if(!(this.events[eventName]))return;
+    this.events[eventName].forEach((fn)=>{
+      console.log(fn);
+      fn(data)
+    })
+  };
 }
 export default EventHub;
