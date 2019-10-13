@@ -12,7 +12,7 @@ class EventHub{
     }
     this.events[eventName].push(fn);
   };
-  emit(eventName, data){
+  emit(eventName, data?){
     if(!(this.events[eventName]))return;
     this.events[eventName].forEach((fn)=>{
       fn(data)
