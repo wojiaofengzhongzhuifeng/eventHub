@@ -18,5 +18,9 @@ class EventHub{
       fn(data)
     })
   };
+  off(eventName, fn){
+    console.log(eventName);
+    console.log(fn);
+  }
 }
 export default EventHub;

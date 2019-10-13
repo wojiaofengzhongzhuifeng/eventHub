@@ -21,3 +21,18 @@ import Event from '../src/index';
     console.assert(called, 'on 注册的函数未被调用了')
   }, 500)
 }
+
+{
+//
+  let event = new Event();
+  let called = false;
+  let fn = ()=>{
+    called = true;
+  };
+  event.on('click222', fn);
+  event.off('click222', fn);
+  event.emit('click222');
+  setTimeout(()=>{
+    console.assert(!called, 'off 未生效')
+  }, 500)
+}
