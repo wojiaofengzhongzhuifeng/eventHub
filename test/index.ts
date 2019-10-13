@@ -10,8 +10,8 @@ import Event from '../src/index';
 {
 //
   let event = new Event();
-  event.emit('click111', 'data1');
   event.on('click111', (data)=>{
     console.log(data);
   });
+  event.emit('click111', 'data1');
 }
