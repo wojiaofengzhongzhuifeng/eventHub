@@ -12,6 +12,7 @@ import Event from '../src/index';
   let event = new Event();
   let called = false;
   event.on('click111', (data)=>{
+    console.assert(data === 'data1', 'on 注册的函数无法接受 emit 的数据');
     called = true;
   });
   event.emit('click111', 'data1');

@@ -15,7 +15,6 @@ class EventHub{
   emit(eventName, data){
     if(!(this.events[eventName]))return;
     this.events[eventName].forEach((fn)=>{
-      console.log(fn);
       fn(data)
     })
   };
