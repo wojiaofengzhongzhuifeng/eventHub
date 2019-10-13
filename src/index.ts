@@ -1,6 +1,6 @@
 class EventHub{
   events: {};
-  on(){};
-  emit(){};
+  on(eventName, fn){};
+  emit(eventName, data){};
 }
 export default EventHub;
