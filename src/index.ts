@@ -19,8 +19,17 @@ class EventHub{
     })
   };
   off(eventName, fn){
-    console.log(eventName);
-    console.log(fn);
+    let fnList = this.events[eventName];
+    if(!fnList)return;
+    let j = -1;
+    for(let i=0;i<=fnList.length - 1;i++){
+      if(fnList[i] === fn){
+        j = i;
+        break;
+      }
+    }
+    fnList.splice(j, 1);
   }
 }
+
 export default EventHub;
