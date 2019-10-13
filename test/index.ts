@@ -10,8 +10,13 @@ import Event from '../src/index';
 {
 //
   let event = new Event();
+  let called = false;
   event.on('click111', (data)=>{
-    console.log(data);
+    called = true;
   });
   event.emit('click111', 'data1');
+  // setTimeout + 最后执行 assert，或者得到 called 的最终值
+  setTimeout(()=>{
+    console.assert(called, 'on 注册的函数被调用了')
+  }, 500)
 }
