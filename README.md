@@ -1,1 +1,1 @@
-- [EventBus](https://github.com/wojiaofengzhongzhuifeng/study/blob/master/blog/function.md)
+- [EventBus](https://github.com/wojiaofengzhongzhuifeng/study/blob/master/blog/eventHub.md)
